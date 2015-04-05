@@ -1,0 +1,81 @@
+<%= form_for(@farmer) do |f| %>
+  <% if @farmer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@farmer.errors.count, "error") %> prohibited this farmer from being saved:</h2>
+
+      <ul>
+      <% @farmer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :farmer_flg %><br>
+    <%= f.number_field :farmer_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :farm_name %><br>
+    <%= f.text_field :farm_name %>
+  </div>
+  <div class="field">
+    <%= f.label :catchcopy %><br>
+    <%= f.text_field :catchcopy %>
+  </div>
+  <div class="field">
+    <%= f.label :representative %><br>
+    <%= f.text_field :representative %>
+  </div>
+  <div class="field">
+    <%= f.label :management_content %><br>
+    <%= f.text_area :management_content %>
+  </div>
+  <div class="field">
+    <%= f.label :farm_banner %><br>
+    <%= f.text_field :farm_banner %>
+  </div>
+  <div class="field">
+    <%= f.label :farm_area %><br>
+    <%= f.text_area :farm_area %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br>
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :access %><br>
+    <%= f.text_field :access %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br>
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br>
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %><br>
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :facebook %><br>
+    <%= f.text_field :facebook %>
+  </div>
+  <div class="field">
+    <%= f.label :googlemap %><br>
+    <%= f.text_field :googlemap %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

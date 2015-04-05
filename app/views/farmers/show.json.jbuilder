@@ -1,0 +1,1 @@
+json.extract! @farmer, :id, :user_id, :farmer_flg, :farm_name, :catchcopy, :representative, :management_content, :farm_banner, :farm_area, :zipcode, :address, :access, :tel, :fax, :twitter, :facebook, :googlemap, :created_at, :updated_at
