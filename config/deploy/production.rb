@@ -15,7 +15,7 @@ role :db,  %w{deploy@example.com}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+server '52.68.44.67', user: 'yoshidaagri', roles: %w{web app}, my_property: :my_value
 
 
 # Custom SSH Options
@@ -25,11 +25,9 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+  set :ssh_options, {
+    keys: [File.expand_path('~/.ssh/yoshidaagri_key.pem')]
+  }
 #
 # And/or per server (overrides global)
 # ------------------------------------

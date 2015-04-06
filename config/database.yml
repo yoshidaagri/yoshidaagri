@@ -3,14 +3,13 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
   database: db_development
   username: user_development
   password: pass_development
-
+  socket /tmp/mysql.sock
 test:
   <<: *default
   database: db_test
@@ -22,3 +21,4 @@ production:
   database: db_production
   username: user_production
   password: pass_production
+  host: 52.68.44.67
