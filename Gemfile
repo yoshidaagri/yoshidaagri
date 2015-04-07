@@ -14,9 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 #unicorn no setting
-group :production, :staging do
-  gem 'unicorn'
-end
+gem 'unicorn'
 group :development do
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-rails',   '~> 1.1', require: false
