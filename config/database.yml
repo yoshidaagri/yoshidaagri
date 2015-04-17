@@ -9,7 +9,7 @@ development:
   database: db_development
   username: user_development
   password: pass_development
-  socket /tmp/mysql.sock
+  socket: /tmp/mysql.sock
 test:
   <<: *default
   database: db_test
