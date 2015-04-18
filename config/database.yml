@@ -21,4 +21,4 @@ production:
   database: db_production
   username: user_production
   password: pass_production
-  host: 52.68.44.67
+  host: localhost
