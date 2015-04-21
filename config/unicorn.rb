@@ -14,6 +14,6 @@ timeout 60
 preload_app true
 
 stdout_path "#{app_path}/current/log/production.log"# log
-stderr_path "#{app_path}/current/log/production.log"# err_log
+stderr_path "#{app_path}/current/log/production_err.log"# err_log
 
 GC.respond_to?(:copy_on_write_friendly=) and GC.copy_on_write_friendly = true
