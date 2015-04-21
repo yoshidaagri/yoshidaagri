@@ -1,6 +1,6 @@
-application = 'reserve-hacker'
+# -*- coding: utf-8 -*-
 
-worker_processes 2 
+worker_processes 2
 app_path = "/var/www/yoshidaagri"
 
 #zyuuyou!!
