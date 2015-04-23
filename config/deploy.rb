@@ -36,7 +36,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    #invoke 'unicorn:restart'
+    invoke 'unicorn:restart'
   end
 end
 
