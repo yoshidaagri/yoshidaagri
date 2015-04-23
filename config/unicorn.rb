@@ -4,8 +4,8 @@ worker_processes 2
 app_path = "/var/www/yoshidaagri"
 
 #zyuuyou!!
-listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
-pid "#{app_path}/current/tmp/unicorn.pid"
+listen "/var/www/yoshidaagri/shared/tmp/sockets/unicorn.sock"
+pid "/var/www/yoshidaagri/current/tmp/unicorn.pid"
 
 #timeout
 timeout 60
