@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Taxfrees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>国籍</th>
+      <th>氏名</th>
+      <th>受付者</th>
+      <th>免税物品</th>
+      <th>最終更新日</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taxfrees.each do |taxfree| %>
+      <tr>
+        <td><%= taxfree.seq %></td>
+        <td><%= taxfree.nationality_name %></td>
+        <td><%= taxfree.name %></td>
+        <td><%= taxfree.user_name %></td>
+        <td><%= taxfree.taxfreeflg_id %></td>
+        <td><%= taxfree.taxpaymentoffice %></td>
+        <td><%= link_to 'Show', taxfree %></td>
+        <td><%= link_to 'Edit', edit_taxfree_path(taxfree) %></td>
+        <td><%= link_to 'Destroy', taxfree, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Taxfree', new_taxfree_path %>

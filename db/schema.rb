@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405040932) do
+ActiveRecord::Schema.define(version: 20150425040808) do
 
   create_table "farmers", force: :cascade do |t|
     t.integer  "user_id",            limit: 4
@@ -32,6 +32,25 @@ ActiveRecord::Schema.define(version: 20150405040932) do
     t.string   "googlemap",          limit: 255
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+  end
+
+  create_table "taxfrees", force: :cascade do |t|
+    t.integer  "user_id",          limit: 4
+    t.string   "user_name",        limit: 255
+    t.integer  "nationality_id",   limit: 4
+    t.string   "nationality_name", limit: 255
+    t.string   "name",             limit: 255
+    t.string   "passport",         limit: 255
+    t.date     "birthday"
+    t.integer  "sex_id",           limit: 4
+    t.integer  "visastatus_id",    limit: 4
+    t.date     "landingdate"
+    t.integer  "taxfreeflg_id",    limit: 4
+    t.string   "taxpaymentplace",  limit: 255
+    t.string   "taxpaymentoffice", limit: 255
+    t.text     "note",             limit: 65535
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
 end

@@ -1,0 +1,73 @@
+<%= form_for(@taxfree) do |f| %>
+  <% if @taxfree.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@taxfree.errors.count, "error") %> prohibited this taxfree from being saved:</h2>
+
+      <ul>
+      <% @taxfree.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality_id %><br>
+    <%= f.number_field :nationality_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality_name %><br>
+    <%= f.text_field :nationality_name %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :passport %><br>
+    <%= f.text_field :passport %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :sex_id %><br>
+    <%= f.number_field :sex_id %>
+  </div>
+  <div class="field">
+    <%= f.label :visastatus_id %><br>
+    <%= f.number_field :visastatus_id %>
+  </div>
+  <div class="field">
+    <%= f.label :landingdate %><br>
+    <%= f.date_select :landingdate %>
+  </div>
+  <div class="field">
+    <%= f.label :taxfreeflg_id %><br>
+    <%= f.number_field :taxfreeflg_id %>
+  </div>
+  <div class="field">
+    <%= f.label :taxpaymentplace %><br>
+    <%= f.text_field :taxpaymentplace %>
+  </div>
+  <div class="field">
+    <%= f.label :taxpaymentoffice %><br>
+    <%= f.text_field :taxpaymentoffice %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
