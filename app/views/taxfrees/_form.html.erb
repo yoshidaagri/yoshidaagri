@@ -1,73 +1,122 @@
-<%= form_for(@taxfree) do |f| %>
-  <% if @taxfree.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@taxfree.errors.count, "error") %> prohibited this taxfree from being saved:</h2>
+<%= form_for @taxfree, :html => { :class => "form-horizontal taxfree" } do |f| %>
 
-      <ul>
-      <% @taxfree.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @taxfree.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@taxfree.errors.count, "error") %> prohibited this taxfree from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @taxfree.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:user_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :user_name %><br>
-    <%= f.text_field :user_name %>
+  <div class="control-group">
+    <%= f.label :user_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:user_name]) %>
   </div>
-  <div class="field">
-    <%= f.label :nationality_id %><br>
-    <%= f.number_field :nationality_id %>
+  <div class="control-group">
+    <%= f.label :nationality_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nationality_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:nationality_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :nationality_name %><br>
-    <%= f.text_field :nationality_name %>
+  <div class="control-group">
+    <%= f.label :nationality_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nationality_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:nationality_name]) %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:name]) %>
   </div>
-  <div class="field">
-    <%= f.label :passport %><br>
-    <%= f.text_field :passport %>
+  <div class="control-group">
+    <%= f.label :passport, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :passport, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:passport]) %>
   </div>
-  <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.date_select :birthday %>
+  <div class="control-group">
+    <%= f.label :birthday, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :birthday, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:birthday]) %>
   </div>
-  <div class="field">
-    <%= f.label :sex_id %><br>
-    <%= f.number_field :sex_id %>
+  <div class="control-group">
+    <%= f.label :sex_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sex_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:sex_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :visastatus_id %><br>
-    <%= f.number_field :visastatus_id %>
+  <div class="control-group">
+    <%= f.label :visastatus_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :visastatus_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:visastatus_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :landingdate %><br>
-    <%= f.date_select :landingdate %>
+  <div class="control-group">
+    <%= f.label :landingdate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :landingdate, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:landingdate]) %>
   </div>
-  <div class="field">
-    <%= f.label :taxfreeflg_id %><br>
-    <%= f.number_field :taxfreeflg_id %>
+  <div class="control-group">
+    <%= f.label :taxfreeflg_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :taxfreeflg_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:taxfreeflg_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :taxpaymentplace %><br>
-    <%= f.text_field :taxpaymentplace %>
+  <div class="control-group">
+    <%= f.label :taxpaymentplace, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :taxpaymentplace, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:taxpaymentplace]) %>
   </div>
-  <div class="field">
-    <%= f.label :taxpaymentoffice %><br>
-    <%= f.text_field :taxpaymentoffice %>
+  <div class="control-group">
+    <%= f.label :taxpaymentoffice, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :taxpaymentoffice, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:taxpaymentoffice]) %>
   </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_area :note %>
+  <div class="control-group">
+    <%= f.label :note, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :note, :class => 'form-control' %>
+    </div>
+    <%= error_span(@taxfree[:note]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            taxfrees_path, :class => 'btn btn-default' %>
+
 <% end %>

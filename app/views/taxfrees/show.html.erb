@@ -1,74 +1,45 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Taxfree -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @taxfree.user_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @taxfree.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_name) %>:</strong></dt>
+  <dd><%= @taxfree.user_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nationality_id) %>:</strong></dt>
+  <dd><%= @taxfree.nationality_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nationality_name) %>:</strong></dt>
+  <dd><%= @taxfree.nationality_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @taxfree.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:passport) %>:</strong></dt>
+  <dd><%= @taxfree.passport %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:birthday) %>:</strong></dt>
+  <dd><%= @taxfree.birthday %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sex_id) %>:</strong></dt>
+  <dd><%= @taxfree.sex_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:visastatus_id) %>:</strong></dt>
+  <dd><%= @taxfree.visastatus_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:landingdate) %>:</strong></dt>
+  <dd><%= @taxfree.landingdate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taxfreeflg_id) %>:</strong></dt>
+  <dd><%= @taxfree.taxfreeflg_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taxpaymentplace) %>:</strong></dt>
+  <dd><%= @taxfree.taxpaymentplace %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taxpaymentoffice) %>:</strong></dt>
+  <dd><%= @taxfree.taxpaymentoffice %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:note) %>:</strong></dt>
+  <dd><%= @taxfree.note %></dd>
+</dl>
 
-<p>
-  <strong>User name:</strong>
-  <%= @taxfree.user_name %>
-</p>
-
-<p>
-  <strong>Nationality:</strong>
-  <%= @taxfree.nationality_id %>
-</p>
-
-<p>
-  <strong>Nationality name:</strong>
-  <%= @taxfree.nationality_name %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @taxfree.name %>
-</p>
-
-<p>
-  <strong>Passport:</strong>
-  <%= @taxfree.passport %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @taxfree.birthday %>
-</p>
-
-<p>
-  <strong>Sex:</strong>
-  <%= @taxfree.sex_id %>
-</p>
-
-<p>
-  <strong>Visastatus:</strong>
-  <%= @taxfree.visastatus_id %>
-</p>
-
-<p>
-  <strong>Landingdate:</strong>
-  <%= @taxfree.landingdate %>
-</p>
-
-<p>
-  <strong>Taxfreeflg:</strong>
-  <%= @taxfree.taxfreeflg_id %>
-</p>
-
-<p>
-  <strong>Taxpaymentplace:</strong>
-  <%= @taxfree.taxpaymentplace %>
-</p>
-
-<p>
-  <strong>Taxpaymentoffice:</strong>
-  <%= @taxfree.taxpaymentoffice %>
-</p>
-
-<p>
-  <strong>Note:</strong>
-  <%= @taxfree.note %>
-</p>
-
-<%= link_to 'Edit', edit_taxfree_path(@taxfree) %> |
-<%= link_to 'Back', taxfrees_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              taxfrees_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_taxfree_path(@taxfree), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              taxfree_path(@taxfree),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
