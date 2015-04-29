@@ -16,25 +16,11 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :user_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@taxfree[:user_id]) %>
-  </div>
-  <div class="control-group">
     <%= f.label :user_name, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :user_name, :class => 'form-control' %>
     </div>
     <%= error_span(@taxfree[:user_name]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :nationality_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nationality_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@taxfree[:nationality_id]) %>
   </div>
   <div class="control-group">
     <%= f.label :nationality_name, :class => 'control-label' %>
@@ -84,13 +70,6 @@
       <%= f.text_field :landingdate, :class => 'form-control' %>
     </div>
     <%= error_span(@taxfree[:landingdate]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :taxfreeflg_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :taxfreeflg_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@taxfree[:taxfreeflg_id]) %>
   </div>
   <div class="control-group">
     <%= f.label :taxpaymentplace, :class => 'control-label' %>

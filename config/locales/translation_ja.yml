@@ -1,0 +1,18 @@
+---
+ja:
+  activerecord:
+    models:
+      taxfree: 免税
+    attributes:
+      taxfree:
+        user_name: 受付者名
+        nationality_name: 国籍
+        name: 購入者名
+        passport: パスポートNo
+        birthday: 生年月日
+        visastatus_id: 免税区分(消費財：1,一般物品：2)
+        sex_id: 性別No(男性：1,女性：2,不明：3)
+        landingdate: 上陸日
+        taxpaymentplace: 納税地
+        taxpaymentoffice: 納税先税務署名
+        note: 備考

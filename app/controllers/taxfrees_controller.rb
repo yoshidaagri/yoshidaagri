@@ -1,3 +1,4 @@
+# -*- encoding: UTF-8 -*-
 class TaxfreesController < ApplicationController
   before_action :set_taxfree, only: [:show, :edit, :update, :destroy]
 
@@ -15,6 +16,11 @@ class TaxfreesController < ApplicationController
   # GET /taxfrees/new
   def new
     @taxfree = Taxfree.new
+    @taxfree.user_name ='1234:海辺店 海辺太郎'
+    @taxfree.taxpaymentoffice = '札幌東税務署'
+    @taxfree.taxpaymentplace = '札幌市'
+    @taxfree.sex_id = 3
+    @taxfree.visastatus_id = 1
   end
 
   # GET /taxfrees/1/edit
