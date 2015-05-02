@@ -16,3 +16,8 @@ ja:
         taxpaymentplace: 納税地
         taxpaymentoffice: 納税先税務署名
         note: 備考
+      farmer:
+        farmer_flg: 農家フラグ（1:農家,2:家庭菜園主）
+        farmer_name: 農家名
+        catchcopy: キャッチコピー
+        
