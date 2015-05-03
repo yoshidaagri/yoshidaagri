@@ -1,81 +1,136 @@
-<%= form_for(@farmer) do |f| %>
-  <% if @farmer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@farmer.errors.count, "error") %> prohibited this farmer from being saved:</h2>
+<%= form_for @farmer, :html => { :class => "form-horizontal farmer" } do |f| %>
 
-      <ul>
-      <% @farmer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @farmer.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@farmer.errors.count, "error") %> prohibited this farmer from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @farmer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:user_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :farmer_flg %><br>
-    <%= f.number_field :farmer_flg %>
+  <div class="control-group">
+    <%= f.label :farmer_flg, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :farmer_flg, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:farmer_flg]) %>
   </div>
-  <div class="field">
-    <%= f.label :farm_name %><br>
-    <%= f.text_field :farm_name %>
+  <div class="control-group">
+    <%= f.label :farm_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :farm_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:farm_name]) %>
   </div>
-  <div class="field">
-    <%= f.label :catchcopy %><br>
-    <%= f.text_field :catchcopy %>
+  <div class="control-group">
+    <%= f.label :catchcopy, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :catchcopy, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:catchcopy]) %>
   </div>
-  <div class="field">
-    <%= f.label :representative %><br>
-    <%= f.text_field :representative %>
+  <div class="control-group">
+    <%= f.label :representative, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :representative, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:representative]) %>
   </div>
-  <div class="field">
-    <%= f.label :management_content %><br>
-    <%= f.text_area :management_content %>
+  <div class="control-group">
+    <%= f.label :management_content, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :management_content, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:management_content]) %>
   </div>
-  <div class="field">
-    <%= f.label :farm_banner %><br>
-    <%= f.text_field :farm_banner %>
+  <div class="control-group">
+    <%= f.label :farm_banner, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :farm_banner, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:farm_banner]) %>
   </div>
-  <div class="field">
-    <%= f.label :farm_area %><br>
-    <%= f.text_area :farm_area %>
+  <div class="control-group">
+    <%= f.label :farm_area, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :farm_area, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:farm_area]) %>
   </div>
-  <div class="field">
-    <%= f.label :zipcode %><br>
-    <%= f.text_field :zipcode %>
+  <div class="control-group">
+    <%= f.label :zipcode, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :zipcode, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:zipcode]) %>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+  <div class="control-group">
+    <%= f.label :address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:address]) %>
   </div>
-  <div class="field">
-    <%= f.label :access %><br>
-    <%= f.text_field :access %>
+  <div class="control-group">
+    <%= f.label :access, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :access, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:access]) %>
   </div>
-  <div class="field">
-    <%= f.label :tel %><br>
-    <%= f.text_field :tel %>
+  <div class="control-group">
+    <%= f.label :tel, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tel, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:tel]) %>
   </div>
-  <div class="field">
-    <%= f.label :fax %><br>
-    <%= f.text_field :fax %>
+  <div class="control-group">
+    <%= f.label :fax, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fax, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:fax]) %>
   </div>
-  <div class="field">
-    <%= f.label :twitter %><br>
-    <%= f.text_field :twitter %>
+  <div class="control-group">
+    <%= f.label :twitter, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :twitter, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:twitter]) %>
   </div>
-  <div class="field">
-    <%= f.label :facebook %><br>
-    <%= f.text_field :facebook %>
+  <div class="control-group">
+    <%= f.label :facebook, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :facebook, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:facebook]) %>
   </div>
-  <div class="field">
-    <%= f.label :googlemap %><br>
-    <%= f.text_field :googlemap %>
+  <div class="control-group">
+    <%= f.label :googlemap, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :googlemap, :class => 'form-control' %>
+    </div>
+    <%= error_span(@farmer[:googlemap]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            farmers_path, :class => 'btn btn-default' %>
+
 <% end %>

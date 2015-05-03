@@ -18,6 +18,14 @@ ja:
         note: 備考
       farmer:
         farmer_flg: 農家フラグ（1:農家,2:家庭菜園主）
-        farmer_name: 農家名
+        farm_name: 農園名（例：武相荘農園）
         catchcopy: キャッチコピー
-        
+        representative: 農園代表名
+        management_content: 主な作物
+        farm_area: 農園の場所（例：東京都町田市能ヶ谷）
+        zipcode: 郵便番号
+        address: 住所
+        tel: 電話番号
+        fax: FAX番号
+        twitter: twitterのアドレス
+        facebook: facebookのアドレス

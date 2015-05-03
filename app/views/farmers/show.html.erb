@@ -1,84 +1,49 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Farmer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @farmer.user_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @farmer.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:farmer_flg) %>:</strong></dt>
+  <dd><%= @farmer.farmer_flg %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:farm_name) %>:</strong></dt>
+  <dd><%= @farmer.farm_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:catchcopy) %>:</strong></dt>
+  <dd><%= @farmer.catchcopy %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:representative) %>:</strong></dt>
+  <dd><%= @farmer.representative %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:management_content) %>:</strong></dt>
+  <dd><%= @farmer.management_content %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:farm_banner) %>:</strong></dt>
+  <dd><%= @farmer.farm_banner %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:farm_area) %>:</strong></dt>
+  <dd><%= @farmer.farm_area %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zipcode) %>:</strong></dt>
+  <dd><%= @farmer.zipcode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @farmer.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:access) %>:</strong></dt>
+  <dd><%= @farmer.access %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tel) %>:</strong></dt>
+  <dd><%= @farmer.tel %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>
+  <dd><%= @farmer.fax %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:twitter) %>:</strong></dt>
+  <dd><%= @farmer.twitter %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:facebook) %>:</strong></dt>
+  <dd><%= @farmer.facebook %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:googlemap) %>:</strong></dt>
+  <dd><%= @farmer.googlemap %></dd>
+</dl>
 
-<p>
-  <strong>Farmer flg:</strong>
-  <%= @farmer.farmer_flg %>
-</p>
-
-<p>
-  <strong>Farm name:</strong>
-  <%= @farmer.farm_name %>
-</p>
-
-<p>
-  <strong>Catchcopy:</strong>
-  <%= @farmer.catchcopy %>
-</p>
-
-<p>
-  <strong>Representative:</strong>
-  <%= @farmer.representative %>
-</p>
-
-<p>
-  <strong>Management content:</strong>
-  <%= @farmer.management_content %>
-</p>
-
-<p>
-  <strong>Farm banner:</strong>
-  <%= @farmer.farm_banner %>
-</p>
-
-<p>
-  <strong>Farm area:</strong>
-  <%= @farmer.farm_area %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @farmer.zipcode %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @farmer.address %>
-</p>
-
-<p>
-  <strong>Access:</strong>
-  <%= @farmer.access %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @farmer.tel %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @farmer.fax %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @farmer.twitter %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @farmer.facebook %>
-</p>
-
-<p>
-  <strong>Googlemap:</strong>
-  <%= @farmer.googlemap %>
-</p>
-
-<%= link_to 'Edit', edit_farmer_path(@farmer) %> |
-<%= link_to 'Back', farmers_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              farmers_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_farmer_path(@farmer), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              farmer_path(@farmer),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

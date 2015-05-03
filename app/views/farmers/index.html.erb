@@ -1,33 +1,35 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Farmers</h1>
-
-<table>
+<%- model_class = Farmer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Farmer flg</th>
-      <th>Farm name</th>
-      <th>Catchcopy</th>
-      <th>Representative</th>
-      <th>Management content</th>
-      <th>Farm banner</th>
-      <th>Farm area</th>
-      <th>Zipcode</th>
-      <th>Address</th>
-      <th>Access</th>
-      <th>Tel</th>
-      <th>Fax</th>
-      <th>Twitter</th>
-      <th>Facebook</th>
-      <th>Googlemap</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:farmer_flg) %></th>
+      <th><%= model_class.human_attribute_name(:farm_name) %></th>
+      <th><%= model_class.human_attribute_name(:catchcopy) %></th>
+      <th><%= model_class.human_attribute_name(:representative) %></th>
+      <th><%= model_class.human_attribute_name(:management_content) %></th>
+      <th><%= model_class.human_attribute_name(:farm_banner) %></th>
+      <th><%= model_class.human_attribute_name(:farm_area) %></th>
+      <th><%= model_class.human_attribute_name(:zipcode) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:access) %></th>
+      <th><%= model_class.human_attribute_name(:tel) %></th>
+      <th><%= model_class.human_attribute_name(:fax) %></th>
+      <th><%= model_class.human_attribute_name(:twitter) %></th>
+      <th><%= model_class.human_attribute_name(:facebook) %></th>
+      <th><%= model_class.human_attribute_name(:googlemap) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @farmers.each do |farmer| %>
       <tr>
+        <td><%= link_to farmer.id, farmer_path(farmer) %></td>
         <td><%= farmer.user_id %></td>
         <td><%= farmer.farmer_flg %></td>
         <td><%= farmer.farm_name %></td>
@@ -44,14 +46,21 @@
         <td><%= farmer.twitter %></td>
         <td><%= farmer.facebook %></td>
         <td><%= farmer.googlemap %></td>
-        <td><%= link_to 'Show', farmer %></td>
-        <td><%= link_to 'Edit', edit_farmer_path(farmer) %></td>
-        <td><%= link_to 'Destroy', farmer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l farmer.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_farmer_path(farmer), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      farmer_path(farmer),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Farmer', new_farmer_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_farmer_path,
+            :class => 'btn btn-primary' %>
